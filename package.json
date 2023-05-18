@@ -2,18 +2,39 @@
   "name": "pixema",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "index.tsx",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --open --port 3000"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/leshaluffscats/pixema.git"
+    "url": "https://github.com/leshaluffscats/pixema.git"
   },
   "author": "leshaluffscats",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/leshaluffscats/pixema/issues"
   },
-  "homepage": "https://github.com/leshaluffscats/pixema#readme"
+  "homepage": "https://github.com/leshaluffscats/pixema#readme",
+  "dependencies": {
+    "@swc/register": "^0.1.10",
+    "react": "^18.2.0",
+    "react-router-dom": "^6.11.2"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.6",
+    "@types/react-dom": "^18.2.4",
+    "babel-loader": "^9.1.2",
+    "clean-webpack-plugin": "^4.0.0",
+    "css-loader": "^6.7.3",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.5.1",
+    "sass-loader": "^13.2.2",
+    "ts-loader": "^9.4.2",
+    "typescript": "^5.0.4",
+    "webpack": "^5.83.1",
+    "webpack-cli": "^5.1.1",
+    "webpack-dev-server": "^4.15.0"
+  }
 }

@@ -1,0 +1,15 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "noImplicitAny": true,
+        "removeComments": true,
+        "preserveConstEnums": true,
+        "sourceMap": true,
+        "target": "ES2022",
+        "esModuleInterop": true,
+        "jsx": "react-jsx",
+    },
+    "files": [
+        "./src/index.tsx",
+    ]
+}
