@@ -7,10 +7,10 @@ module.exports = {
     entry: "./src/index.tsx",
     output: {
         filename: "bundle.js",
-        path: path.resolve(__dirname, "dist"),
+        path: path.resolve(__dirname, "public"),
     },
     resolve: {
-        extensions: [".tsx", ".ts"]
+        extensions: [".tsx", ".ts", ".js", ".jsx"]
     },
     plugins: [
         new HtmlWebpackPlugin({
@@ -30,8 +30,18 @@ module.exports = {
                 use: 'ts-loader',
             },
             {
+                test: /\.ts$/,
+                enforce: 'pre',
+                use: [
+                    {
+                        loader: 'tslint-loader',
+                        options: { /* Loader options go here */ }
+                    }
+                ]
+            },
+            {
                 test: /\.(css|scss)$/,
-                use: ['css-loader', 'sass-loader'],
+                use: ['style-loader', 'css-loader', 'sass-loader'],
             },
             {
                 test: /\.(png|jpeg|jpg|svg|gif)$/,
@@ -41,7 +51,7 @@ module.exports = {
     },
     devServer: {
         static: {
-            directory: path.join(__dirname, 'dist'),
+            directory: path.join(__dirname, 'public'),
         },
         compress: true,
         port: 3000,
