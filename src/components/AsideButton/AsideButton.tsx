@@ -1,5 +1,5 @@
 import React from 'react';
-import { IAsideButtonProps } from '../../types';
+import { IAsideButtonProps } from '../../types/appInterfaceTypes';
 import './AsideButton.scss';
 
 

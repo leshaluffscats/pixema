@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { useState } from 'react';
+import axios from 'axios';
 
-const MovieItem = () => {
+const MovieItem = (props: any) => {
+    
     return (
         <div>
             <img src="" alt="Icon" />
-            <p>Movie Name</p>
-            <p>Movie tags</p>
+            <p style={{ color: "#FFF" }}>{props.name}</p>
+            <p style={{ color: "#FFF" }}>genres</p>
         </div>
     );
 };

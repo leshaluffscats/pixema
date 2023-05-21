@@ -1,0 +1,7 @@
+@import '../../shared/variables.scss';
+@import '../../shared/mixins.scss';
+
+.moviesList-wrapper{
+    @include flex;
+    gap: 15px;
+}
