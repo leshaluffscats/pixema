@@ -1,0 +1,58 @@
+//typopraphy
+@mixin desktop-h1 {
+    font-weight: 600;
+    font-size: 40px;
+}
+
+@mixin desktop-h2 {
+    font-weight: 600;
+    font-size: 24px;
+}
+
+@mixin desktop-h3 {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+@mixin tablet-h1 {
+    font-weight: 600;
+    font-size: 32px;
+}
+
+@mixin tablet-h2 {
+    font-weight: 600;
+    font-size: 24px;
+}
+
+@mixin tablet-h3 {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+@mixin mobile-h1 {
+    font-weight: 600;
+    font-size: 28px;
+}
+
+@mixin mobile-h2 {
+    font-weight: 600;
+    font-size: 20px;
+}
+
+@mixin mobile-h3 {
+    font-weight: 600;
+    font-size: 18px;
+}
+
+@mixin bodytext {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+}
+
+
+// layout
+@mixin flex {
+    display: flex;
+    align-items: center;
+}

@@ -1,0 +1,10 @@
+@import '../../shared/variables.scss';
+@import '../../shared/mixins.scss';
+
+.aside-wrapper{
+    @include flex;
+    flex-direction: column;
+    width: 370px;
+    align-items: flex-start;
+    margin-top: 64px;
+}

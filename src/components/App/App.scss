@@ -1,6 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,400;0,600;1,400&display=swap');
+@import '../../shared/variables.scss';
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     outline: none;
+    font-family: inherit;
+    border: none;
+}
+
+body {
+    font-family: "Exo 2", sans-serif;
+    background-color: $bg-color-black;
+    padding: 48px 62px 64px 64px;
 }

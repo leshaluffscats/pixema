@@ -11,5 +11,8 @@
     },
     "files": [
         "./src/index.tsx",
+    ],
+    "include": [
+        "src/react-app-env.d.ts",
     ]
 }

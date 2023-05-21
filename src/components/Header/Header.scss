@@ -1,0 +1,7 @@
+@import '../../shared/variables.scss';
+@import '../../shared/mixins.scss';
+
+.header {
+    @include flex;
+    justify-content: space-between;
+}

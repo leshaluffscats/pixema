@@ -46,7 +46,8 @@ module.exports = {
             {
                 test: /\.(png|jpeg|jpg|svg|gif)$/,
                 use: ['file-loader'],
-            }
+            },
+            
         ]
     },
     devServer: {

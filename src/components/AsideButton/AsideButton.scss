@@ -1,0 +1,16 @@
+@import '../../shared/variables.scss';
+@import '../../shared/mixins.scss';
+
+.aside-button {
+    @include flex;
+    width: 114px;
+    color: $context-color-white;
+    background: none;
+    cursor: pointer;
+    margin-bottom: 40px;
+    font-size: 18px;
+
+    img{
+        margin-right: 23px;
+    }
+}

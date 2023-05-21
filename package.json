@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --open",
-    "build": "webpack --mode=development"
+    "build": "webpack --mode=development",
+    "prod": "webpack --mode=production"
   },
   "repository": {
     "type": "git",
@@ -20,7 +21,9 @@
   "homepage": "https://github.com/leshaluffscats/pixema#readme",
   "dependencies": {
     "react": "^18.2.0",
-    "react-router-dom": "^6.11.2"
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.11.2",
+    "react-scripts": "^5.0.1"
   },
   "devDependencies": {
     "@reduxjs/toolkit": "^1.9.5",
