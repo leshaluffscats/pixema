@@ -1,13 +1,23 @@
-import React, { useState } from 'react';
-import axios from 'axios';
+import { IMovieItemProps } from '../../types/movieTypes';
+import MovieGenres from '../MovieGenres/MovieGenres';
+import './MovieItem.scss';
+import { useNavigate } from 'react-router-dom';
 
-const MovieItem = (props: any) => {
-    
+
+// todo доделать компонент
+
+
+const MovieItem = (props: IMovieItemProps) => {
+    const navigate = useNavigate();
+    const { genres, id } = props;
+
     return (
-        <div>
-            <img src="" alt="Icon" />
-            <p style={{ color: "#FFF" }}>{props.name}</p>
-            <p style={{ color: "#FFF" }}>genres</p>
+        <div className='movieItem-wrapper' onClick={() => navigate(`/movie/${id}`)}>
+            <div className='movieItem__image-wrapper'>
+                <img src={props.image} alt="Poster" />
+            </div>
+            <p className='movieItem__title'>{props.name}</p>
+            <MovieGenres genres={genres} />
         </div>
     );
 };

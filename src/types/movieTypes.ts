@@ -68,3 +68,14 @@ export interface IMovieData {
 export interface IMovieInitialState {
     movies: IMovieData[];
 }
+
+export interface IMovieItemProps {
+    image: string;
+    name: string;
+    genres: IMovieGenres[];
+    id: number;
+}
+
+export interface IMovieGenresProps {
+    genres: IMovieGenres[]
+}

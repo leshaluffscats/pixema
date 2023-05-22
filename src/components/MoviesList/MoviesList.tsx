@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import axios from 'axios';
 import MovieItem from '../MovieItem/MovieItem';
 import './MoviesList.scss';
@@ -6,8 +6,9 @@ import { API_URL, API_KEY } from '../../data/constants';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { loadMoviesAsyncAction } from '../../store/reducers/movieReducer';
 
+
 const MoviesList = () => {
-    // const [movies, setMovies] = useState<any>([]);
+   
     const dispatch = useAppDispatch();
     const movies = useAppSelector(state => state.movies.movies);
 
@@ -16,12 +17,13 @@ const MoviesList = () => {
             headers: {
                 'X-API-KEY': `${API_KEY}`,
             }
-        }).then(({ data: { docs } }) => dispatch(loadMoviesAsyncAction(docs)));
+        })
+            .then(({ data: { docs } }) => dispatch(loadMoviesAsyncAction(docs)));
     }, []);
 
     return (
         <section className='moviesList-wrapper'>
-            {/* {movies.map((movie: any) => <MovieItem name={movie.name} key={movie.id} genres={movie.genres} />)} */}
+            {movies.map((movie: any) => <MovieItem name={movie.name} key={movie.id} genres={movie.genres} image={movie.poster.previewUrl} id={movie.id}/>)}
         </section>
     );
 };

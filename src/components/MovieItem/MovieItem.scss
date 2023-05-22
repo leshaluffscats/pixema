@@ -1,0 +1,54 @@
+@import '../../shared/variables.scss';
+@import '../../shared/mixins.scss';
+
+.movieItem-wrapper {
+    cursor: pointer;
+    width: 266px;
+    height: 433px;
+    border: 1px solid yellow;
+    @include flex;
+    flex-direction: column;
+    align-items: flex-start;
+    
+
+    .movieItem__image-wrapper {
+        border-radius: 20px;
+        overflow: hidden;
+        width: 100%;
+        height: 357px;
+        align-self: flex-start;
+
+        img {
+            object-fit: contain;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .movieItem__title {
+        @include bodytext;
+        font-weight: 700;
+        color: $context-color-white;
+        margin-top: 24px;
+
+    }
+
+    .movieItem__genres {
+        margin-top: 4px;
+        justify-content: center;
+        @include flex;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        @include bodytext;
+        color: $context-color-light;
+
+        span {
+            word-wrap: break-word;
+
+            &:not(:first-of-type)::before {
+                content: "•";
+                margin: 0 8px;
+            }
+        }
+    }
+}
