@@ -9,11 +9,11 @@ import AsideButton from '../AsideButton/AsideButton';
 const Aside = () => {
     return (
         <div className='aside-wrapper'>
-            <AsideButton icon={homeIcon} text="Home"/>
-            <AsideButton icon={trendsIcon} text="Trends"/>
-            <AsideButton icon={favoritesIcon} text="Favorites"/>
-            <AsideButton icon={settingsIcon} text="Settings"/>
-        </div>
+            <AsideButton icon={homeIcon} url='/' text="Home"/>
+            <AsideButton icon={trendsIcon} url='*' text="Trends"/>
+            <AsideButton icon={favoritesIcon} url='*' text="Favorites"/>
+            <AsideButton icon={settingsIcon} url='*' text="Settings"/>
+        </div> 
     );
 
 };

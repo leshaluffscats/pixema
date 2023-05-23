@@ -32,23 +32,4 @@
         margin-top: 24px;
 
     }
-
-    .movieItem__genres {
-        margin-top: 4px;
-        justify-content: center;
-        @include flex;
-        justify-content: flex-start;
-        flex-wrap: wrap;
-        @include bodytext;
-        color: $context-color-light;
-
-        span {
-            word-wrap: break-word;
-
-            &:not(:first-of-type)::before {
-                content: "•";
-                margin: 0 8px;
-            }
-        }
-    }
 }

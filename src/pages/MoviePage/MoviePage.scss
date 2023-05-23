@@ -1,0 +1,23 @@
+@import '../../shared/variables.scss';
+@import '../../shared/mixins.scss';
+
+.moviePage-wrapper {
+    color: #fff;
+    @include flex;
+    gap: 42px;
+    align-items: flex-start;
+
+    .moviePage__right-side{
+        max-width: 878px;
+        min-width: 272px;
+        border: 1px solid red;
+    }
+
+    h1{
+        margin-bottom: 26px;
+    }
+
+    p {
+        margin: 40px 0;
+    }
+}

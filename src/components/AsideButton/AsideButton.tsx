@@ -1,14 +1,16 @@
 import React from 'react';
 import { IAsideButtonProps } from '../../types/appInterfaceTypes';
 import './AsideButton.scss';
+import { NavLink } from 'react-router-dom';
 
 
 const AsideButton = (props: IAsideButtonProps) => {
+
     return (
-        <button className='aside-button'>
+        <NavLink className='aside-button' to={props.url}>
             <img src={props.icon} alt={props.text} />
             {props.text}
-        </button>
+        </NavLink>
     );
 };
 

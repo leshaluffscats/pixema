@@ -11,11 +11,11 @@ interface IMovieLogo {
 }
 
 interface IMovieNames {
-    name: string
+    name: string;
 }  //будет массивом с объектами в IMovieData
 
-interface IMoviePoster {
-    previewUrl: string;
+export interface IMoviePoster {
+    previewUrl?: string;
     url: string
 }
 
@@ -37,7 +37,7 @@ interface IMovieWatchability {
     items: IMovieItems[] | null;
 }
 
-interface IMovieCounties {
+export interface IMovieCounties {
     name: string;
 }
 
@@ -62,7 +62,10 @@ export interface IMovieData {
     shortDescription: string;
     type: string;
     votes: IMovieRatingAndVotes;
-    watchability: IMovieWatchability
+    watchability: IMovieWatchability;
+    persons: IMoviePerson[];
+    year: string;
+    premiere: IMoviePremiereData;
 }
 
 export interface IMovieInitialState {
@@ -77,5 +80,30 @@ export interface IMovieItemProps {
 }
 
 export interface IMovieGenresProps {
-    genres: IMovieGenres[]
+    genres: IMovieGenres[];
+}
+
+export interface IMoviePerson {
+    description: string;
+    enName: string | null;
+    enProfession: string;
+    id: number;
+    name: string;
+    photo: string;
+    profession: string;
+}
+
+interface IMovieYearData {
+    year: string;
+    premiere: string;
+}
+export interface IMovieDataProps {
+    year: IMovieYearData;
+    countries: IMovieCounties[];
+    persons: IMoviePerson[];
+}
+
+interface IMoviePremiereData {
+    world: string;
+    russia: string;
 }

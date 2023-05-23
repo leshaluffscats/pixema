@@ -1,0 +1,23 @@
+@import '../../shared/variables.scss';
+@import '../../shared/mixins.scss';
+
+.movieTableData-wrapper {
+    margin-bottom: 56px;
+    border-spacing: 20px;
+
+    tr {
+        font-weight: 500;
+        td {
+            word-wrap: break-word;
+        }
+
+        td:first-of-type {
+            font-weight: 600;
+            color: $context-color-light;
+            width: 82px;
+            margin-right: 54px;
+        }
+
+    }
+
+}

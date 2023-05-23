@@ -13,7 +13,7 @@ const MoviesList = () => {
     const movies = useAppSelector(state => state.movies.movies);
 
     useEffect(() => {
-        axios.get(`${API_URL}v1.3/movie?page=1&limit=10&year=2022-2023`, {
+        axios.get(`${API_URL}v1.3/movie?page=1&limit=12&year=2022-2023`, {
             headers: {
                 'X-API-KEY': `${API_KEY}`,
             }

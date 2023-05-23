@@ -1,0 +1,14 @@
+
+.image-wrapper {
+    border-radius: 20px;
+    overflow: hidden;
+    width: 100%;
+    height: 357px;
+    align-self: flex-start;
+
+    img {
+        object-fit: contain;
+        width: 100%;
+        height: 100%;
+    }
+}

@@ -3,7 +3,7 @@ import Header from '../Header/Header';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Aside from '../Aside/Aside';
 import MoviesList from '../MoviesList/MoviesList';
-import MoviePage from '../MoviePage/MoviePage';
+import MoviePage from '../../pages/MoviePage/MoviePage';
 
 const App = () => {
     return (
