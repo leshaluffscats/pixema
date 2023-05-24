@@ -1,9 +1,16 @@
 @import '../../shared/variables.scss';
 @import '../../shared/mixins.scss';
 
-.moviesList-wrapper {
+
+.movieList-container {
     @include flex;
-    flex-wrap: wrap;
-    gap: 40px;
-    border: 1px solid red;
+    flex-direction: column;
+
+    .moviesList-subcontainer {
+        @include flex;
+        flex-wrap: wrap;
+        gap: 40px;
+        // border: 1px solid red;
+        margin-bottom: 72px;
+    }
 }

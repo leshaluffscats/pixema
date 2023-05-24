@@ -1,0 +1,15 @@
+@import '../../shared/variables.scss';
+@import '../../shared/mixins.scss';
+
+.showMore-btn {
+    @include flex;
+    justify-content: center;
+    padding: 8px 24px;
+    width: 161px;
+    height: 40px;
+    background-color: $graphite;
+    color: $context-color-white;
+    font-weight: 500;
+    border-radius: 20px;
+    cursor: pointer;
+}

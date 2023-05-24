@@ -9,6 +9,12 @@
         font-weight: 500;
         td {
             word-wrap: break-word;
+
+            span {
+                &:not(:last-child):after{
+                    content: ",  ";
+                }
+            }
         }
 
         td:first-of-type {

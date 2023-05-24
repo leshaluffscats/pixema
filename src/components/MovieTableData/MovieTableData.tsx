@@ -10,7 +10,7 @@ const MovieTableData = ({ year, countries, persons }: IMovieDataProps) => {
     }
 
     function showPersons(array: IMoviePerson[], string: string): React.ReactNode {
-        return filterArray(array, string).map((el: IMoviePerson) => <span key={el.id}>{el.name}</span>)
+        return filterArray(array, string).slice(0, 20).map((el: IMoviePerson) => <span key={el.id}>{el.name}</span>)
     }
 
     return (
@@ -22,7 +22,7 @@ const MovieTableData = ({ year, countries, persons }: IMovieDataProps) => {
                 </tr>
                 <tr>
                     <td>Released</td>
-                    <td>{year?.premiere?.slice(0, year.premiere.indexOf("T"))}</td>
+                    <td>{new Date(year?.premiere).toLocaleDateString()}</td>
                 </tr>
                 <tr>
                     <td>{countries.length > 1 ? "Countries" : "Country"}</td>

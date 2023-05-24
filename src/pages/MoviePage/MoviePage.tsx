@@ -3,7 +3,7 @@ import MovieGenres from '../../components/MovieGenres/MovieGenres';
 import MoviesList from '../../components/MoviesList/MoviesList';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-import { API_URL, API_KEY } from '../../data/constants';
+import { API_URL, API_HEADER } from '../../data/constants';
 import './MoviePage.scss';
 import MoviePoster from '../../components/MoviePoster/MoviePoster';
 import MovieTableData from '../../components/MovieTableData/MovieTableData';
@@ -34,9 +34,7 @@ const MoviePage = () => {
 
     useEffect(() => {
         axios.get(`${API_URL}v1.3/movie/${id}`, {
-            headers: {
-                "X-API-KEY": API_KEY,
-            }
+            headers: API_HEADER,
         })
             .then(({ data }) => {
                 setValues(data);
@@ -64,7 +62,7 @@ const MoviePage = () => {
                 <p>{description}</p>
                 <MovieTableData year={year} persons={persons} countries={countries} />
                 <div>
-                    <h3>Reccomendations</h3>
+                    <h3>Recommendations</h3>
                     {/* <MoviesList /> */}
                 </div>
             </div>

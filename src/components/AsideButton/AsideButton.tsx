@@ -1,5 +1,5 @@
 import React from 'react';
-import { IAsideButtonProps } from '../../types/appInterfaceTypes';
+import { IAsideButtonProps } from '../../types/appPropsTypes';
 import './AsideButton.scss';
 import { NavLink } from 'react-router-dom';
 
