@@ -1,6 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const CopyPlugin = require('copy-webpack-plugin');
 
 module.exports = {
     mode: "development",
@@ -8,7 +9,8 @@ module.exports = {
     output: {
         filename: "bundle.js",
         path: path.resolve(__dirname, "public"),
-        publicPath: '/' //????
+        publicPath: '/',
+        clean: true,
     },
     resolve: {
         extensions: [".tsx", ".ts", ".js", ".jsx"]
@@ -18,6 +20,14 @@ module.exports = {
             template: './src/index.html'
         }),
         new CleanWebpackPlugin(),
+        new CopyPlugin({
+            patterns: [
+                {
+                    from: path.resolve(__dirname, 'src/assets/'),
+                    to: path.resolve(__dirname, 'public/images/')
+                },
+            ]
+        })
     ],
     module: {
         rules: [
@@ -45,10 +55,16 @@ module.exports = {
                 use: ['style-loader', 'css-loader', 'sass-loader'],
             },
             {
-                test: /\.(png|jpeg|jpg|svg|gif)$/,
-                use: ['file-loader'],
+                test: /\.(woff(2)?|eot|ttf|otf|svg)$/,
+                // use: ['file-loader'],
+                type: 'asset/inline'
             },
-            
+            {
+                test: /\.(png|jpeg|jpg|gif)$/,
+                // use: ['file-loader'],
+                type: 'asset/resourse'
+            },
+
         ]
     },
     devServer: {
