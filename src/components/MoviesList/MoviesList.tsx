@@ -17,7 +17,7 @@ const MoviesList = () => {
 
     useEffect(() => {
         dispatch(setLoadingStatusOnAction());
-        axios.get(`${API_URL}v1.3/movie?page=${page}&limit=13`, {
+        axios.get(`${API_URL}v1.3/movie?page=${page}&limit=12`, {
             headers: API_HEADER,
         })
             .then(({ data: { docs } }) => {

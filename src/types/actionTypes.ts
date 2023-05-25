@@ -8,3 +8,8 @@ export interface IMovieReducerAction {
     type: string;
     payload: IMovieData[];
 }
+
+
+export interface IThemeAction  {
+    type: string;
+}

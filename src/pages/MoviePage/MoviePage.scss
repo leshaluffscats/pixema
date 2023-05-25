@@ -2,7 +2,6 @@
 @import '../../shared/mixins.scss';
 
 .moviePage-wrapper {
-    color: #fff;
     @include flex;
     gap: 42px;
     align-items: flex-start;

@@ -3,12 +3,12 @@
 
 .usernameWrapper {
     @include flex;
-    color: $context-color-white;
     gap: 5px;
     cursor: pointer;
 
     div {
         background-color: $primary-color;
+        color: $context-color-white;
         width: 56px;
         height: 56px;
         border-radius: 10px;

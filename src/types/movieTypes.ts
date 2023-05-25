@@ -81,6 +81,7 @@ export interface IMovieItemProps {
 
 export interface IMovieGenresProps {
     genres: IMovieGenres[];
+    slice?: number;
 }
 
 export interface IMoviePerson {

@@ -1,12 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit';
 import { movieReducer } from './reducers/movieReducer';
 import {loadingReducer} from './reducers/loadingReducer';
+import {themeReducer} from './reducers/themeReducer';
 
 
 export const store = configureStore({
     reducer: {
         movies: movieReducer,
-        loadingStatus: loadingReducer
+        loadingStatus: loadingReducer,
+        theme: themeReducer,
     }
 });
 

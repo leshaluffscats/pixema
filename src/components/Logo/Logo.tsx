@@ -1,11 +1,14 @@
 import React from 'react';
 import logo from '../../assets/svg/pixema-logo.svg';
+import logoLight from '../../assets/svg/pixema-logo-light.svg';
 import './Logo.scss';
 import { useNavigate } from 'react-router-dom';
+import { useAppSelector } from '../../store/hooks';
 
 const Logo = () => {
+    const { isDark } = useAppSelector(state => state.theme);
     const navigate = useNavigate();
-    
+
     function reloadPage() {
         navigate('/')
         location.reload();
@@ -13,7 +16,7 @@ const Logo = () => {
 
     return (
         <div className='header__logo' onClick={reloadPage}>
-            <img src={logo} alt="pixema logo" />
+            <img src={isDark ? logo : logoLight} alt="pixema logo" />
         </div>
     );
 };

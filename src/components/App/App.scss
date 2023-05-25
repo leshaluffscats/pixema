@@ -12,6 +12,14 @@
 
 body {
     font-family: "Exo 2", sans-serif;
+    padding: 48px 62px 64px 64px;
+    background-color: $context-color-white;
+    color: $bg-color-black;
+}
+
+.dark {
+    font-family: "Exo 2", sans-serif;
     background-color: $bg-color-black;
+    color: $context-color-white;
     padding: 48px 62px 64px 64px;
 }
