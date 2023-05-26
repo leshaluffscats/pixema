@@ -8,6 +8,7 @@ import './MoviePage.scss';
 import MoviePoster from '../../components/MoviePoster/MoviePoster';
 import MovieTableData from '../../components/MovieTableData/MovieTableData';
 import { IMovieData } from '../../types/movieTypes';
+import Aside from '../../components/Aside/Aside';
 
 const MoviePage = () => {
     const { id } = useParams();
@@ -44,6 +45,7 @@ const MoviePage = () => {
 
     return (
         <section className='moviePage-wrapper'>
+            <Aside />
             <div>
                 <MoviePoster url={image} />
                 <div>

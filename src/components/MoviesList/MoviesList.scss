@@ -9,8 +9,9 @@
     .moviesList-subcontainer {
         @include flex;
         flex-wrap: wrap;
-        gap: 40px;
+        // gap: 40px;
         // border: 1px solid red;
         margin-bottom: 72px;
+        justify-content: space-evenly;
     }
 }

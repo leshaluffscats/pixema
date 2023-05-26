@@ -1,0 +1,11 @@
+@import '../../shared/variables.scss';
+@import '../../shared/mixins.scss';
+
+.homePage-wrapper {
+    .homePage-subcontainer {
+        @include flex;
+        align-items: flex-start;
+        margin-top: 64px;
+        justify-content: flex-start;
+    }
+}

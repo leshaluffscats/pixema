@@ -3,11 +3,17 @@
 
 .moviePage-wrapper {
     @include flex;
-    gap: 42px;
+    // gap: 42px;
     align-items: flex-start;
+    justify-content: flex-start;
+
+    .image-wrapper{
+        flex-shrink: 0;
+    }
 
     .moviePage__right-side{
-        max-width: 878px;
+        margin-left: 42px;
+        max-width: 670px;
         min-width: 272px;
         border: 1px solid red;
     }

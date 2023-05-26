@@ -6,6 +6,7 @@ import MoviesList from '../MoviesList/MoviesList';
 import MoviePage from '../../pages/MoviePage/MoviePage';
 import { useEffect } from 'react';
 import { useAppSelector } from '../../store/hooks';
+import HomePage from '../../pages/HomePage/HomePage';
 
 const App = () => {
     const { isDark } = useAppSelector(state => state.theme);
@@ -17,11 +18,11 @@ const App = () => {
     return (
         <BrowserRouter>
             <Header />
-            <Aside />
+            {/* <Aside /> */}
             <Routes>
-                <Route path='/' element={<MoviesList />} />
+                <Route path='/' element={<HomePage />} />
                 <Route path='/movie/:id' element={<MoviePage />} />
-                <Route path='*' element={<MoviesList />} />
+                <Route path='*' element={<HomePage />} />
             </Routes>
         </BrowserRouter>
     );
