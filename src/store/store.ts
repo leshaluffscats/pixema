@@ -3,6 +3,7 @@ import { movieReducer } from './reducers/movieReducer';
 import thunkMiddleware from "redux-thunk"
 import {loadingReducer} from './reducers/loadingReducer';
 import {themeReducer} from './reducers/themeReducer';
+import {renderReducer} from './reducers/renderReducer';
 
 
 export const store = configureStore({
@@ -10,6 +11,7 @@ export const store = configureStore({
         movies: movieReducer,
         loadingStatus: loadingReducer,
         theme: themeReducer,
+        render: renderReducer,
     },
     middleware: (getDefaultMiddleware)=>  getDefaultMiddleware().concat(thunkMiddleware),
 });

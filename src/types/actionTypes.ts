@@ -13,3 +13,7 @@ export interface IMovieReducerAction {
 export interface IThemeAction  {
     type: string;
 }
+
+export interface IRenderReducerAction {
+    type: string;
+}
