@@ -1,11 +1,15 @@
 import React from 'react';
-import { IMovieGenresProps } from '../../types/movieTypes';
+import { IMovieGenresProps, ISearchGenres } from '../../types/movieTypes';
 import './MovieGenres.scss';
 
-const MovieGenres = ({ genres, slice }: IMovieGenresProps) => {
+
+// !todo типизировать это
+// !!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+const MovieGenres = ({ genres, slice }: any) => {
     return (
         <div className='movieItem__genres'>
-            {genres.slice(0, slice || genres.length + 1).map((genre, index) => <span key={genre.name + index}>{genre.name}</span>)}
+            {genres.slice(0, slice || genres.length + 1).map((genre: any) => <span key={genre?.name}>{genre.name ?? genre}</span>)}
         </div>
     );
 };

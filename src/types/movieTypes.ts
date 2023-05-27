@@ -83,6 +83,9 @@ export interface IMovieGenresProps {
     genres: IMovieGenres[];
     slice?: number;
 }
+export interface ISearchGenres {
+    genres?: string[];
+}
 
 export interface IMoviePerson {
     description: string;

@@ -15,16 +15,16 @@ const MoviesList = () => {
     const movies = useAppSelector(state => state.movies.movies);
     const [page, setPage] = useState(1);
 
-    useEffect(() => {
-        dispatch(setLoadingStatusOnAction());
-        axios.get(`${API_URL}v1.3/movie?page=${page}&limit=12`, {
-            headers: API_HEADER,
-        })
-            .then(({ data: { docs } }) => {
-                dispatch(loadMoviesAsyncAction(docs));
-                dispatch(setLoadingStatusOffAction());
-            });
-    }, [page]);
+    // useEffect(() => {
+    //     dispatch(setLoadingStatusOnAction());
+    //     axios.get(`${API_URL}v1.3/movie?page=${page}&limit=12`, {
+    //         headers: API_HEADER,
+    //     })
+    //         .then(({ data: { docs } }) => {
+    //             dispatch(loadMoviesAsyncAction(docs));
+    //             dispatch(setLoadingStatusOffAction());
+    //         });
+    // }, [page]);
 
     return (
         <section className='movieList-container'>
