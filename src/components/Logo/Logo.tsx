@@ -1,4 +1,3 @@
-import React from 'react';
 import logo from '../../assets/svg/pixema-logo.svg';
 import logoLight from '../../assets/svg/pixema-logo-light.svg';
 import './Logo.scss';

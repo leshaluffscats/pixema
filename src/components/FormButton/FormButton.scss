@@ -1,0 +1,12 @@
+@import '../../shared/variables.scss';
+@import '../../shared/mixins.scss';
+
+.sign-form-button {
+    width: 100%;
+    height: 56px;
+    background-color: $primary-color;
+    color: $context-color-white;
+    border-radius: 10px;
+    @include bodytext;
+    margin: 40px 0 32px;
+}

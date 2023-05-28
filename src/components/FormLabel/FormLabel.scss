@@ -1,0 +1,23 @@
+@import '../../shared/variables.scss';
+@import '../../shared/mixins.scss';
+
+.form-label {
+    width: 100%;
+    border: 1px solid green;
+    margin-bottom: 24px;
+    @include bodytext;
+    font-weight: 600;
+    text-transform: capitalize;
+
+    input {
+        width: 100%;
+        height: 56px;
+        @include bodytext;
+        background-color: $graphite;
+        border-radius: 10px;
+        margin-top: 8px;
+        padding: 0 20px;
+        color: $context-color-white;
+    }
+
+}

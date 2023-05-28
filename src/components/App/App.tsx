@@ -8,6 +8,8 @@ import HomePage from '../../pages/HomePage/HomePage';
 import SearchPage from '../../pages/SearchPage/SearchPage';
 import FavPage from '../../pages/FavPage/FavPage';
 import TrendsPage from '../../pages/TrendsPage/TrendsPage';
+import SignInPage from '../../pages/SignInPage/SignInPage';
+import SignUpPage from '../../pages/SignUpPage/SignUpPage';
 
 const App = () => {
     const { isDark } = useAppSelector(state => state.theme);
@@ -26,6 +28,8 @@ const App = () => {
                 <Route path='/search/:query' element={<SearchPage />} />
                 <Route path='/trends' element={<TrendsPage />} />
                 <Route path='/favorites' element={<FavPage />} />
+                <Route path='/sign-in' element={<SignInPage />} />
+                <Route path='/sign-up' element={<SignUpPage />} />
                 <Route path='*' element={<HomePage />} />
             </Routes>
         </BrowserRouter>

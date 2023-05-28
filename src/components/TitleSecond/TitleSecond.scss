@@ -1,0 +1,5 @@
+@import '../../shared/mixins.scss';
+
+.title-h2 {
+    @include desktop-h2;
+}
