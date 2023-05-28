@@ -17,3 +17,8 @@ export interface IThemeAction  {
 export interface IRenderReducerAction {
     type: string;
 }
+
+export interface IFavMovieAction {
+    type: string;
+    payload: string | number;
+}

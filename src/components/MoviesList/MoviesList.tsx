@@ -2,11 +2,10 @@ import { useEffect, useState } from 'react';
 import MovieItem from '../MovieItem/MovieItem';
 import './MoviesList.scss';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
-import { loadMoviesAsyncAction } from '../../store/reducers/movieReducer';
+import { loadMoviesAsyncAction } from '../../store/reducers/movieReducer/moviesActions';
 import ShowMoreBtn from '../ShowMoreBtn/ShowMoreBtn';
-import { setLoadingStatusOnAction, setLoadingStatusOffAction } from '../../store/reducers/loadingReducer';
-import { stopRenderAction } from '../../store/reducers/renderReducer';
-import { getMoviesResponse } from '../../services/movieApiService';
+import { setLoadingStatusOnAction, setLoadingStatusOffAction } from '../../store/reducers/loadingReducer/loadingActions';
+import { stopRenderAction } from '../../store/reducers/renderReducer/renderActions';
 
 
 // todo исправить баг и использовать по возможности useRef
@@ -16,18 +15,14 @@ const MoviesList = () => {
     const [page, setPage] = useState(1);
     const { needsRender } = useAppSelector(state => state.render);
 
+    // todo вернуть loader с помощью async/await
     useEffect(() => {
         if (needsRender) {
             dispatch(setLoadingStatusOnAction());
-            try {
-                dispatch(loadMoviesAsyncAction(page, 12))
-            } catch {
-                // !обработать ошибку
-            } finally {
-                dispatch(stopRenderAction());
-                dispatch(setLoadingStatusOffAction());
-            }
-        };
+            dispatch(loadMoviesAsyncAction(page, 12));
+            dispatch(setLoadingStatusOffAction());
+            dispatch(stopRenderAction());
+        }
     }, [page]);
 
     return (

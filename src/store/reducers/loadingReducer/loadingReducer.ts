@@ -1,12 +1,11 @@
-import {ILoadingAction} from '../../types/actionTypes';
+import {ILoadingAction} from '../../../types/actionTypes';
 
 const initialState = {
     isLoading: false,
 }
 
-const LOADING = "LOADING";
-const FINISHED_LOADING = "FINISHED_LOADING";
-
+export const LOADING = "LOADING";
+export const FINISHED_LOADING = "FINISHED_LOADING";
 
 export const loadingReducer = (state = initialState, action: ILoadingAction) => {
     switch (action.type) {
@@ -22,18 +21,3 @@ export const loadingReducer = (state = initialState, action: ILoadingAction) => 
     }
 }
 
-export const setLoadingStatusOnAction = () => {
-    return (
-        {
-            type: LOADING,
-        }
-    )
-}
-
-export const setLoadingStatusOffAction = () => {
-    return (
-        {
-            type: FINISHED_LOADING,
-        }
-    )
-}

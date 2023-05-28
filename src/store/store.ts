@@ -1,9 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { movieReducer } from './reducers/movieReducer';
+import { movieReducer } from './reducers/movieReducer/movieReducer';
 import thunkMiddleware from "redux-thunk"
-import {loadingReducer} from './reducers/loadingReducer';
-import {themeReducer} from './reducers/themeReducer';
-import {renderReducer} from './reducers/renderReducer';
+import { loadingReducer } from './reducers/loadingReducer/loadingReducer';
+import { themeReducer } from './reducers/themeReducer/themeReducer';
+import { renderReducer } from './reducers/renderReducer/renderReducer';
+import { favMoviesReducer } from './reducers/favMoviesReducer/favMoviesReducer'
 
 
 export const store = configureStore({
@@ -12,8 +13,9 @@ export const store = configureStore({
         loadingStatus: loadingReducer,
         theme: themeReducer,
         render: renderReducer,
+        favMovies: favMoviesReducer,
     },
-    middleware: (getDefaultMiddleware)=>  getDefaultMiddleware().concat(thunkMiddleware),
+    middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(thunkMiddleware),
 });
 
 

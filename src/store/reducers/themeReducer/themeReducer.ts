@@ -1,11 +1,11 @@
-import { IThemeAction } from "../../types/actionTypes";
+import { IThemeAction } from "../../../types/actionTypes";
 
 const initialState = {
     isDark: false,
 }
 
-const LIGHT = "LIGHT";
-const DARK = "DARK";
+export const LIGHT = "LIGHT";
+export const DARK = "DARK";
 
 export const themeReducer = (state = initialState, action: IThemeAction) => {
     switch(action.type){
@@ -21,14 +21,4 @@ export const themeReducer = (state = initialState, action: IThemeAction) => {
     }
 }
 
-export const switchToLightThemeAction = () => {
-    return({
-        type: LIGHT,
-    })
-}
 
-export const switchToDarkThemeAction = () => {
-    return({
-        type: DARK,
-    })
-}

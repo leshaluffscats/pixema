@@ -1,6 +1,6 @@
 import React from 'react';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
-import { switchToDarkThemeAction, switchToLightThemeAction } from '../../store/reducers/themeReducer';
+import { switchToDarkThemeAction, switchToLightThemeAction } from '../../store/reducers/themeReducer/themeActions';
 import './ToggleBtn.scss';
 
 

@@ -1,7 +1,7 @@
 import './ShowMoreBtn.scss';
 import { useAppSelector, useAppDispatch } from '../../store/hooks';
 import Loader from '../Loader/Loader';
-import { startRenderAction } from '../../store/reducers/renderReducer';
+import { startRenderAction } from '../../store/reducers/renderReducer/renderActions';
 
 interface IShowMoreBtnProps {
     setPage: React.Dispatch<React.SetStateAction<number>>;
