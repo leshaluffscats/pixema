@@ -1,13 +1,12 @@
 import { useEffect, useState } from 'react';
-import axios from 'axios';
 import MovieItem from '../MovieItem/MovieItem';
 import './MoviesList.scss';
-import { API_URL, API_HEADER, SECOND_API_HEADER } from '../../data/constants';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { loadMoviesAsyncAction } from '../../store/reducers/movieReducer';
 import ShowMoreBtn from '../ShowMoreBtn/ShowMoreBtn';
 import { setLoadingStatusOnAction, setLoadingStatusOffAction } from '../../store/reducers/loadingReducer';
 import { stopRenderAction } from '../../store/reducers/renderReducer';
+import { getMoviesResponse } from '../../services/movieApiService';
 
 
 // todo исправить баг и использовать по возможности useRef
@@ -20,22 +19,15 @@ const MoviesList = () => {
     useEffect(() => {
         if (needsRender) {
             dispatch(setLoadingStatusOnAction());
-
-            axios.get(`${API_URL}v1.3/movie?page=${page}&limit=12`, {
-                // headers: API_HEADER,
-                headers: SECOND_API_HEADER,
-            })
-                .then(({ data: { docs } }) => {
-                    dispatch(loadMoviesAsyncAction(docs));
-                    dispatch(setLoadingStatusOffAction());
-                    dispatch(stopRenderAction());
-                })
-                .catch(() => {
-                    dispatch(stopRenderAction());
-                    dispatch(setLoadingStatusOffAction());
-                });
-
-        } else dispatch(stopRenderAction());
+            try {
+                dispatch(loadMoviesAsyncAction(page, 12))
+            } catch {
+                // !обработать ошибку
+            } finally {
+                dispatch(stopRenderAction());
+                dispatch(setLoadingStatusOffAction());
+            }
+        };
     }, [page]);
 
     return (

@@ -1,6 +1,7 @@
 import { AppDispatch } from "../store";
 import { IMovieData, IMovieInitialState } from "../../types/movieTypes";
 import { IMovieReducerAction } from "../../types/actionTypes";
+import { getMoviesResponse } from "../../services/movieApiService";
 
 const initialState: IMovieInitialState = {
     movies: [],
@@ -18,18 +19,23 @@ export const movieReducer = (state = initialState, action: IMovieReducerAction) 
         };
         case SEARCH_MOVIES: return {
             ...state,
-            movies:  [...action.payload],
+            movies: [...action.payload],
         }
         default: return state;
     }
 }
 
-export const loadMoviesAsyncAction = (moviesArr: IMovieData[]) => {
+const loadMoviesAction = (moviesArr: IMovieData[]) => {
+    return ({
+        type: LOAD_MOVIES,
+        payload: moviesArr,
+    })
+}
+
+export const loadMoviesAsyncAction = (page: number, limit: number) => {
     return (dispatch: AppDispatch) => {
-        dispatch({
-            type: LOAD_MOVIES,
-            payload: moviesArr,
-        })
+        getMoviesResponse(page, limit)
+            .then(({ data: { docs } }: any) => dispatch(loadMoviesAction(docs)))
     }
 }
 
@@ -41,4 +47,5 @@ export const searchMoviesAsyncAction = (moviesArr: IMovieData[]) => {
         })
     }
 }
+
 

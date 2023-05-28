@@ -1,14 +1,12 @@
 import { useEffect, useState } from 'react';
 import MovieGenres from '../../components/MovieGenres/MovieGenres';
-import MoviesList from '../../components/MoviesList/MoviesList';
 import { useParams } from 'react-router-dom';
-import axios from 'axios';
-import { API_URL, API_HEADER, SECOND_API_HEADER } from '../../data/constants';
 import './MoviePage.scss';
 import MoviePoster from '../../components/MoviePoster/MoviePoster';
 import MovieTableData from '../../components/MovieTableData/MovieTableData';
 import { IMovieData } from '../../types/movieTypes';
 import Aside from '../../components/Aside/Aside';
+import { getMoviesResponseByID } from '../../services/movieApiService';
 
 const MoviePage = () => {
     const { id } = useParams();
@@ -34,13 +32,7 @@ const MoviePage = () => {
     }
 
     useEffect(() => {
-        axios.get(`${API_URL}v1.3/movie/${id}`, {
-            // headers: API_HEADER,
-            headers: SECOND_API_HEADER,
-        })
-            .then(({ data }) => {
-                setValues(data);
-            })
+        getMoviesResponseByID(id).then(({ data }) => setValues(data))
     }, [])
 
 
