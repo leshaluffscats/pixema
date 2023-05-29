@@ -27,6 +27,12 @@ interface IMovieRatingAndVotes {
     russianFilmCritics: number;
 }
 
+export interface ISimilarMovie {
+    id: number;
+    name: string;
+    poster: IMoviePoster;
+}
+
 interface IMovieItems {
     logo: IMovieLogo;
     name: string;
@@ -66,6 +72,7 @@ export interface IMovieData {
     persons: IMoviePerson[];
     year: string;
     premiere: IMoviePremiereData;
+    similarMovies: ISimilarMovie[];
 }
 
 export interface IMovieInitialState {
@@ -75,7 +82,7 @@ export interface IMovieInitialState {
 export interface IMovieItemProps {
     image: string;
     name: string;
-    genres: IMovieGenres[];
+    genres?: IMovieGenres[];
     id: number;
 }
 
@@ -111,3 +118,4 @@ interface IMoviePremiereData {
     world: string;
     russia: string;
 }
+

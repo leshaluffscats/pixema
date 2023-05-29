@@ -1,5 +1,5 @@
 import './Username.scss';
-import { useAuth } from '../../hooks/hooks';
+import useAuth from '../../hooks/hooks';
 import { useAppDispatch } from '../../store/hooks';
 import { removeUser } from '../../store/slices/userSlice';
 import { Link, useNavigate } from 'react-router-dom';
@@ -23,11 +23,9 @@ const Username = () => {
                     <p>{email}</p>
                     <button onClick={() => dispatch(removeUser())}>Log out</button>
                 </div>
-
                 :
-                <Link to='/sign-in'>Войти</Link>
+                <Link to='/sign-in' className='logIn-btn'>Войти</Link>
             }
-
         </>
     )
 };

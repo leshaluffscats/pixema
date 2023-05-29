@@ -4,13 +4,14 @@ import './MovieTableData.scss';
 
 
 const MovieTableData = ({ year, countries, persons }: IMovieDataProps) => {
-    console.log({ year, countries, persons });
     function filterArray(array: IMoviePerson[], filter: string): IMoviePerson[] {
         return array.filter((el: IMoviePerson) => el.enProfession === filter)
     }
 
     function showPersons(array: IMoviePerson[], string: string): React.ReactNode {
-        return filterArray(array, string).slice(0, 20).map((el: IMoviePerson) => <span key={el.id}>{el.name}</span>)
+        return filterArray(array, string)
+            .slice(0, 20)
+            .map((el: IMoviePerson) => <span key={el.id}>{el.name}</span>)
     }
 
     return (

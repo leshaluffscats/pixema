@@ -4,33 +4,25 @@ import MovieItem from '../../components/MovieItem/MovieItem';
 import './FavPage.scss';
 import background from '../../assets/svg/fav-page-bg.svg';
 import { useAppSelector } from '../../store/hooks';
-import { IMovieData } from '../../types/movieTypes';
+import useAuth from '../../hooks/hooks';
+import EmptyFavPage from '../../components/EmptyFavPage/EmptyFavPage';
+
 
 const FavPage = () => {
     const { favMovies } = useAppSelector(state => state.favMovies);
-
-    useEffect(() => {
-
-    },
-        [favMovies]
-    )
-
+    const { isAuth } = useAuth();
     return (
         <main className='favPage-wrapper'>
             <section className='favPage-subcontainer'>
                 <Aside />
-                {
-                    !favMovies?.length ?
-                        <div className='favPage-image-wrapper'>
-                            <img src={background} alt="" />
-                            <p>No favorite movies</p>
-                        </div>
-                        :
-                        <div>
-                            {favMovies.map((el: any) => <MovieItem image={el.previewImage} name={el.title} genres={el.genres} id={el.id} key={el.id}/>)}
 
-                        </div>
+                {!isAuth && <EmptyFavPage background={background} text='You have to authorize' />} 
+                {isAuth && !favMovies?.length && <EmptyFavPage background={background} text='No favorite movies' />}
+                {
+                    isAuth && favMovies?.length &&
+                    favMovies.map((el: any) => <MovieItem image={el.previewImage} name={el.title} genres={el.genres} id={el.id} key={el.id} />)
                 }
+
             </section>
         </main>
     );
