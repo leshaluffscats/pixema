@@ -20,15 +20,15 @@ const MoviesList = () => {
         if (needsRender) {
             dispatch(setLoadingStatusOnAction());
             dispatch(loadMoviesAsyncAction(page, 12));
-            dispatch(setLoadingStatusOffAction());
             dispatch(stopRenderAction());
+            dispatch(setLoadingStatusOffAction());
         }
     }, [page]);
 
     return (
         <section className='movieList-container'>
             <div className='moviesList-subcontainer'>
-                {movies.map((movie: any) => <MovieItem name={movie.name} key={movie.id} genres={movie.genres} image={movie.poster.previewUrl} id={movie.id} />)}
+                {movies.map((movie: any) => <MovieItem name={movie.name} key={movie.id} genres={movie.genres} image={movie.poster?.previewUrl} id={movie.id} />)}
             </div>
             <ShowMoreBtn setPage={setPage} />
         </section>

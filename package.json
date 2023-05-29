@@ -20,6 +20,8 @@
   },
   "homepage": "https://github.com/leshaluffscats/pixema#readme",
   "dependencies": {
+    "dotenv": "^16.0.3",
+    "firebase": "^9.22.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.11.2",

@@ -8,11 +8,13 @@ import { IMovieData } from '../../types/movieTypes';
 import Aside from '../../components/Aside/Aside';
 import { getMoviesResponseByID } from '../../services/movieApiService';
 import { addToFavoritesAction } from '../../store/reducers/favMoviesReducer/favMoviesActions';
-import { useAppDispatch } from '../../store/hooks';
+import { useAppDispatch, useAppSelector } from '../../store/hooks';
 
 const MoviePage = () => {
     const { id } = useParams();
     const dispatch = useAppDispatch();
+    const [isBtnClicked, setIsBtnClicked] = useState(false);
+    const { isDark } = useAppSelector(state => state.theme);
 
     const [movieData, setMovieData] = useState({
         image: "",
@@ -40,8 +42,8 @@ const MoviePage = () => {
                 year: data.year,
                 premiere: data.premiere?.world ?? data.premiere?.russia,
             },
-            persons: data.countries,
-            countries: data.persons,
+            persons: data.persons,
+            countries: data.countries,
             id,
         })
     }
@@ -50,14 +52,21 @@ const MoviePage = () => {
         getMoviesResponseByID(id).then(({ data }) => setValues(data));
     }, [])
 
-
     return (
         <section className='moviePage-wrapper'>
             <Aside />
             <div>
                 <MoviePoster url={movieData.image} />
                 <div>
-                    <button onClick={() => { dispatch(addToFavoritesAction(movieData))}}>add to favorites</button>
+                    <button
+                        className='movie-page-button'
+                        onClick={() => {
+                            dispatch(addToFavoritesAction(movieData))
+                            setIsBtnClicked(prev => !prev);
+
+                        }}>
+                        add to favorites
+                    </button>
                 </div>
             </div>
             <div className='moviePage__right-side'>

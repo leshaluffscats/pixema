@@ -1,15 +1,18 @@
 import React from 'react';
 import './FormLabel.scss';
+import { IFormLabelProps } from '../../types/appPropsTypes';
 
-interface IFormLabelProps {
-    value: string;
-}
 
-const FormLabel = ({ value }: IFormLabelProps) => {
+const FormLabel = ({ type, value, setState, text }: IFormLabelProps) => {
     return (
         <label className='form-label'>
-            {value}
-            <input type={value} placeholder={value} />
+            {text}
+            <input
+                type={type}
+                placeholder={text}
+                value={value}
+                onChange={e => setState(e.target.value)}
+            />
         </label>
     );
 };

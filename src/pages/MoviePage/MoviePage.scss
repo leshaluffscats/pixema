@@ -7,22 +7,42 @@
     align-items: flex-start;
     justify-content: flex-start;
 
-    .image-wrapper{
+    .image-wrapper {
         flex-shrink: 0;
     }
 
-    .moviePage__right-side{
+    .moviePage__right-side {
         margin-left: 42px;
         max-width: 670px;
         min-width: 272px;
         border: 1px solid red;
     }
 
-    h1{
+    h1 {
         margin-bottom: 26px;
     }
 
     p {
         margin: 40px 0;
+    }
+
+    .movie-page-button {
+        width: 100%;
+        height: 56px;
+        margin-top: 32px;
+        border-radius: 10px;
+        cursor: pointer;
+        @include bodytext;
+        font-weight: 500;
+        background-color: $context-color-light;
+        color: $bg-color-black;
+
+        &:hover {
+            filter: drop-shadow(0 0 0.75rem $context-color-light);
+        }
+    }
+
+    .activeBtn {
+        background-color: $primary-color;
     }
 }

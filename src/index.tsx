@@ -1,8 +1,8 @@
-import React from 'react';
 import ReactDOM from 'react-dom/client';
 import App from './components/App/App';
 import { Provider } from 'react-redux';
 import { store } from './store/store';
+import './firebase';
 
 
 const root = ReactDOM.createRoot(
@@ -10,9 +10,7 @@ const root = ReactDOM.createRoot(
 );
 
 root.render(
-
     <Provider store={store}>
         <App />
     </Provider>
-
 );

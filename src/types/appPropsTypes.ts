@@ -4,3 +4,9 @@ export interface IAsideButtonProps {
     url: string;
 }
 
+export interface IFormLabelProps {
+    type: string;
+    value: string;
+    setState: React.Dispatch<React.SetStateAction<string>>;
+    text: string;
+}

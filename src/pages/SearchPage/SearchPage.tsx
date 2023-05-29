@@ -4,7 +4,7 @@ import MovieItem from '../../components/MovieItem/MovieItem';
 import { useAppSelector } from '../../store/hooks';
 
 const SearchPage = () => {
-    const { movies } = useAppSelector(state => state.movies);
+    const { movies } = useAppSelector(state => state.searchMovies);
     return (
         <section>
             <Aside />

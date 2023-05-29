@@ -4,7 +4,7 @@ import './MovieTableData.scss';
 
 
 const MovieTableData = ({ year, countries, persons }: IMovieDataProps) => {
-
+    console.log({ year, countries, persons });
     function filterArray(array: IMoviePerson[], filter: string): IMoviePerson[] {
         return array.filter((el: IMoviePerson) => el.enProfession === filter)
     }

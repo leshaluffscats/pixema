@@ -3,7 +3,7 @@ import inputFilterIcon from '../../assets/svg/input-filter-icon.svg';
 import './Search.scss';
 import { useAppSelector, useAppDispatch } from '../../store/hooks';
 import { useNavigate } from 'react-router-dom';
-import { searchMoviesAsyncAction } from '../../store/reducers/movieReducer/moviesActions';
+import { searchMoviesAsyncAction } from '../../store/reducers/searchMoviesReducer/searchMoviesActions';
 
 const Search = () => {
     const { isDark } = useAppSelector(state => state.theme);
@@ -19,7 +19,6 @@ const Search = () => {
     useEffect(() => {
         changeSearchTheme();
     }, [isDark]);
-
 
     const handleSearch: FormEventHandler<HTMLFormElement> = (e) => {
         e.preventDefault();
