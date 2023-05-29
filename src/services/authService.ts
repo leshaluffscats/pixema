@@ -16,13 +16,14 @@ export const loginUser = (e: FormEvent, email: string, password: string, dispatc
                 })))
 
         })
-        .catch((error) => { });
+        .catch((error) => { alert(error.message) });
 }
+
 
 export const registerUser = (e: FormEvent, email: string, password: string, dispatch: any) => {
     e.preventDefault();
     const auth = getAuth();
-    
+
     createUserWithEmailAndPassword(auth, email, password)
         .then(({ user }) => {
             user.getIdToken()
@@ -32,5 +33,5 @@ export const registerUser = (e: FormEvent, email: string, password: string, disp
                     token,
                 })))
         })
-        .catch((error) => { });
+        .catch((error) => { alert(error.message) });
 }

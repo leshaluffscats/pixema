@@ -3,16 +3,17 @@
 
 .usernameWrapper {
     @include flex;
+    flex-direction: column;
     gap: 5px;
     cursor: pointer;
 
-    div {
+    button {
         background-color: $primary-color;
         color: $context-color-white;
-        width: 56px;
-        height: 56px;
+        width: 50%;
+        height: 40px;
         border-radius: 10px;
         text-align: center;
-        line-height: 56px;
+        cursor: pointer;
     }
 }
