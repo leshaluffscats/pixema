@@ -10,6 +10,7 @@ import FavPage from '../../pages/FavPage/FavPage';
 import TrendsPage from '../../pages/TrendsPage/TrendsPage';
 import SignInPage from '../../pages/SignInPage/SignInPage';
 import SignUpPage from '../../pages/SignUpPage/SignUpPage';
+import Filter from '../Filter/Filter';
 
 const App = () => {
     const { isDark } = useAppSelector(state => state.theme);
@@ -21,6 +22,7 @@ const App = () => {
     return (
         <BrowserRouter>
             <Header />
+            <Filter />
             {/* <Aside /> */}
             <Routes>
                 <Route path='/' element={<HomePage />} />

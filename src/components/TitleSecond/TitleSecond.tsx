@@ -1,4 +1,3 @@
-import React from 'react';
 import './TitleSecond.scss';
 
 interface ITitleProps {

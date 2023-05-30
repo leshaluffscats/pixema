@@ -22,3 +22,4 @@ export interface IEmptyFavPageProps {
     background: string;
     text: string;
 }
+

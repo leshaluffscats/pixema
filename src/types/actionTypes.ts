@@ -22,3 +22,8 @@ export interface IFavMovieAction {
     type: string;
     payload: string | number;
 }
+
+
+export interface IFilterAction {
+    type: string;
+}

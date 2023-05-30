@@ -22,7 +22,7 @@ const SignInForm = () => {
             <FormLabel type='email' value={email} setState={setEmail} text='email' />
             <FormLabel type='password' value={password} setState={setPassword} text='password' />
             <Link to='/'>Forgot Password</Link>
-            <FormButton text='Sign In' />
+            <FormButton text='Sign In' className='sign-form-button'/>
 
             <p>
                 Don't have an account?

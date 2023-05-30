@@ -2,8 +2,6 @@
 @import '../../shared/mixins.scss';
 
 .favPage-wrapper {
-    border: 1px solid red;
-
     .favPage-subcontainer {
         @include flex;
         align-items: flex-start;

@@ -16,7 +16,7 @@ interface IMovieNames {
 
 export interface IMoviePoster {
     previewUrl?: string;
-    url: string
+    url: string;
 }
 
 interface IMovieRatingAndVotes {
@@ -73,6 +73,7 @@ export interface IMovieData {
     year: string;
     premiere: IMoviePremiereData;
     similarMovies: ISimilarMovie[];
+    image: string;
 }
 
 export interface IMovieInitialState {
@@ -84,11 +85,13 @@ export interface IMovieItemProps {
     name: string;
     genres?: IMovieGenres[];
     id: number;
+    alternativeName?: string;
 }
 
 export interface IMovieGenresProps {
     genres: IMovieGenres[];
     slice?: number;
+    id: number;
 }
 export interface ISearchGenres {
     genres?: string[];
@@ -119,3 +122,6 @@ interface IMoviePremiereData {
     russia: string;
 }
 
+export interface ISearchMovie extends IMovieData {
+    poster: any;
+}

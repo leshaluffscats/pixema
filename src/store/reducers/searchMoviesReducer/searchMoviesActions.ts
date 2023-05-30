@@ -13,6 +13,8 @@ const searchMovies = (moviesArr: IMovieData[]) => {
 export const searchMoviesAsyncAction = (str: string) => {
     return (dispatch: AppDispatch) => {
         searchMoviesResponse(str)
-            .then(({ data: { docs } }) => dispatch(searchMovies(docs)))
+            .then(({ data: { docs } }) => docs.filter((el: any) => el.poster !== null)) //не загружать фильмы без постеров
+            .then(docs => dispatch(searchMovies(docs)));
+
     }
 }

@@ -6,9 +6,6 @@ import './SignInPage.scss';
 const SignInPage = () => {
     return (
         <main className='sign-page'>
-            <div className='sign-page-logo'>
-                <Logo />
-            </div>
             <div className='sign-page__form'>
                 <SignInForm />
             </div>

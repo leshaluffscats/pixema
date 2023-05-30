@@ -28,7 +28,7 @@ const SignUpForm = () => {
             <FormLabel type='password' text='confirm password' value={confirmedPass} setState={setConfirmedPass} />
 
             <Link to='/reset-password'>Forgot Password</Link>
-            <FormButton text='Sign Up' />
+            <FormButton text='Sign Up' className='sign-form-button'/>
             <p>
                 Already have an account?
                 <Link to='/sign-in'>Sign In</Link>

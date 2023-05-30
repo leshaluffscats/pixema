@@ -72,7 +72,7 @@ const MoviePage = () => {
                     </div>
                 </div>
                 <div className='moviePage__right-side'>
-                    <MovieGenres genres={movieData.genres} />
+                    <MovieGenres genres={movieData.genres} id={Number(id)}/>
                     <h1>{movieData.title}</h1>
                     <div>
                         <div></div>

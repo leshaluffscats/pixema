@@ -1,14 +1,17 @@
-import React from 'react';
 import Aside from '../../components/Aside/Aside';
 import MovieItem from '../../components/MovieItem/MovieItem';
 import { useAppSelector } from '../../store/hooks';
+import './SearchPage.scss';
+import { ISearchMovie } from '../../types/movieTypes';
 
 const SearchPage = () => {
     const { movies } = useAppSelector(state => state.searchMovies);
     return (
-        <section>
+        <section className='searchPage-wrapper'>
             <Aside />
-            {movies.map((movie: any, index) => <MovieItem name={movie.name} key={movie.id} genres={movie.genres} image={movie.poster} id={movie.id} />)}
+            <div className='searchMovies'>
+                {movies.map((movie: ISearchMovie) => <MovieItem name={movie.name} key={movie.id} genres={movie.genres} image={movie.poster} id={movie.id} alternativeName={movie.alternativeName}/>)}
+            </div>
         </section>
     );
 };

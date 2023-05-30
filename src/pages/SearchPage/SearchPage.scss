@@ -1,15 +1,13 @@
 @import '../../shared/variables.scss';
 @import '../../shared/mixins.scss';
 
-
-.movieList-container {
+.searchPage-wrapper {
     @include flex;
-    flex-direction: column;
+    align-items: flex-start;
 
-    .moviesList-subcontainer {
+    .searchMovies {
         @include flex;
         flex-wrap: wrap;
-        margin-bottom: 72px;
-        justify-content: space-evenly;
+        gap: 30px;
     }
 }

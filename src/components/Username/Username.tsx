@@ -6,7 +6,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 
 const Username = () => {
-    const { token, id, email, isAuth } = useAuth();
+    const { token, email, isAuth } = useAuth();
     const dispatch = useAppDispatch();
     const navigate = useNavigate();
 

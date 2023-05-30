@@ -3,11 +3,12 @@ import './FormButton.scss';
 
 interface IFormButtonProps {
     text: string;
+    className?: string;
 }
 
-const FormButton = ({ text }: IFormButtonProps) => {
+const FormButton = ({ text, className }: IFormButtonProps) => {
     return (
-        <button className='sign-form-button' type='submit'>
+        <button className={className} type='submit'>
             {text}
         </button>
     );
