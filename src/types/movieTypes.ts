@@ -20,11 +20,11 @@ export interface IMoviePoster {
 }
 
 interface IMovieRatingAndVotes {
-    await: null | number;
-    filmCritics: number;
+    await?: null | number;
+    filmCritics?: number;
     imdb: number;
     kp: number;
-    russianFilmCritics: number;
+    russianFilmCritics?: number;
 }
 
 export interface ISimilarMovie {

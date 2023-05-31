@@ -13,13 +13,11 @@ const MoviesList = () => {
     const [page, setPage] = useState(1);
     const { needsRender } = useAppSelector(state => state.render);
 
-    // todo вернуть loader с помощью async/await
     useEffect(() => {
         if (needsRender) {
             dispatch(setLoadingStatusOnAction());
             dispatch(loadMoviesAsyncAction(page, 12));
             dispatch(stopRenderAction());
-            dispatch(setLoadingStatusOffAction());
         }
     }, [page]);
 

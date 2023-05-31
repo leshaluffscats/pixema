@@ -5,10 +5,17 @@ import './SettingsPage.scss';
 import { useAppSelector, useAppDispatch } from '../../store/hooks';
 import ToggleBtn from '../../components/ToggleBtn/ToggleBtn';
 import useAuth from '../../hooks/hooks';
+import { closeFilterAction } from '../../store/reducers/filterReducer/filterActions';
 
 const SettingsPage = () => {
     const { isDark } = useAppSelector(state => state.theme);
     const { email, isAuth } = useAuth();
+    const dispatch = useAppDispatch();
+
+    useEffect(() => {
+        dispatch(closeFilterAction());
+    }, [])
+
 
     return (
         <main className='settings-page-wrapper'>

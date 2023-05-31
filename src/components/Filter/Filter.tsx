@@ -10,10 +10,13 @@ import { setQuery } from '../../services/movieApiService';
 import FormLabel from '../FormLabel/FormLabel';
 import { useNavigate } from 'react-router-dom';
 import { filterMoviesAsyncAction } from '../../store/reducers/movieReducer/moviesActions';
+import { setLoadingStatusOnAction } from '../../store/reducers/loadingReducer/loadingActions';
 
 const Filter = () => {
     const { isOpen } = useAppSelector(state => state.filter);
+    const { isLoading } = useAppSelector(state => state.loadingStatus)
     const dispatch = useAppDispatch();
+
     const [genre, setGenre] = useState("");
     const [year, setYear] = useState("2000");
     const [lastYear, setLastYear] = useState("2023");
@@ -35,6 +38,7 @@ const Filter = () => {
         e.preventDefault();
         dispatch(filterMoviesAsyncAction(setQuery(year, lastYear, genre, rating, lastRating, limit)));
         dispatch(toggleFilterAction());
+        dispatch(setLoadingStatusOnAction());
         navigate('/filter');
     }
 

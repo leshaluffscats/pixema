@@ -30,6 +30,7 @@ const MoviePage = () => {
         countries: [],
         id,
         similarMovies: [],
+        rating: { kp: 0, imdb: 0 },
     })
 
     function setValues(data: IMovieData) {
@@ -47,6 +48,7 @@ const MoviePage = () => {
             countries: data.countries,
             id,
             similarMovies: data.similarMovies,
+            rating: { kp: data.rating.kp, imdb: data.rating.imdb },
         })
     }
 
@@ -72,12 +74,11 @@ const MoviePage = () => {
                     </div>
                 </div>
                 <div className='moviePage__right-side'>
-                    <MovieGenres genres={movieData.genres} id={Number(id)}/>
+                    <MovieGenres genres={movieData.genres} id={Number(id)} />
                     <h1>{movieData.title}</h1>
-                    <div>
-                        <div></div>
-                        <div></div>
-                        <div></div>
+                    <div className='movie-page-rating-container'>
+                        <span title='Оценка Кинопоиска'>{movieData.rating?.kp}</span>
+                        <span title='Оценка Imdb'>{movieData.rating?.imdb}</span>
                     </div>
                     <p>{movieData.description}</p>
                     <MovieTableData year={movieData.year} persons={movieData.persons} countries={movieData.countries} />

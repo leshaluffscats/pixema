@@ -10,11 +10,33 @@
         flex-shrink: 0;
     }
 
-
     .moviePage__right-side {
         margin-left: 42px;
         max-width: 670px;
         min-width: 272px;
+
+        .movie-page-rating-container {
+            @include flex;
+
+            span {
+                background-color: $graphite;
+                border-radius: 10px;
+                padding: 4px 8px;
+                margin-left: 5px;
+                color: $context-color-white;
+                font-weight: 600;
+                
+            }
+
+            span:first-of-type {
+                background-color: $tertiary-color-green;
+            }
+            span:nth-of-type(2)::before{
+                content:"IMDb ";
+                font-weight: 800;
+            }
+
+        }
     }
 
     h1 {

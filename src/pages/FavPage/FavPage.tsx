@@ -6,10 +6,16 @@ import background from '../../assets/svg/fav-page-bg.svg';
 import { useAppSelector, useAppDispatch } from '../../store/hooks';
 import useAuth from '../../hooks/hooks';
 import EmptyFavPage from '../../components/EmptyFavPage/EmptyFavPage';
+import { closeFilterAction } from '../../store/reducers/filterReducer/filterActions';
 
 const FavPage = () => {
     const { favMovies } = useAppSelector(state => state.favMovies);
     const { isAuth } = useAuth();
+    const dispatch = useAppDispatch();
+
+    useEffect(() => {
+        dispatch(closeFilterAction());
+     }, [])
 
     return (
         <main className='favPage-wrapper'>
