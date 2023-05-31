@@ -1,0 +1,17 @@
+@import '../../shared/variables.scss';
+@import '../../shared/mixins.scss';
+
+.filter-page-wrapper {
+    section {
+        @include flex;
+        align-items: flex-start;
+        margin-top: 64px;
+        justify-content: flex-start;
+
+        .filtered-movies-list {
+            @include flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+    }
+}

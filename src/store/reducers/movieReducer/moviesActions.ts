@@ -1,6 +1,6 @@
 import { AppDispatch } from "../../store";
-import { getMoviesResponse } from "../../../services/movieApiService";
-import { LOAD_MOVIES } from "./movieReducer";
+import { getMoviesResponse, getFilteredMovies } from "../../../services/movieApiService";
+import { LOAD_MOVIES,FILTER_MOVIES } from "./movieReducer";
 import { IMovieData } from "../../../types/movieTypes";
 
 
@@ -11,7 +11,12 @@ const loadMoviesAction = (moviesArr: IMovieData[]) => {
     })
 }
 
-
+const filterMoviesAction = (moviesArr: IMovieData[]) => {
+    return ({
+        type: FILTER_MOVIES,
+        payload: moviesArr,
+    })
+}
 
 export const loadMoviesAsyncAction = (page: number, limit: number) => {
     return (dispatch: AppDispatch) => {
@@ -20,4 +25,13 @@ export const loadMoviesAsyncAction = (page: number, limit: number) => {
             .then(docs => dispatch(loadMoviesAction(docs)));
     }
 }
+
+export const filterMoviesAsyncAction = (query: string) => {
+    return (dispatch: AppDispatch) => {
+        getFilteredMovies(query)
+            .then(({ data: { docs } }) => docs.filter((el: any) => el.poster !== null))
+            .then(docs => dispatch(filterMoviesAction(docs)));
+    }
+}
+
 

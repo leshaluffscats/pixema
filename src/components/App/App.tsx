@@ -7,7 +7,7 @@ import { useAppSelector } from '../../store/hooks';
 import HomePage from '../../pages/HomePage/HomePage';
 import SearchPage from '../../pages/SearchPage/SearchPage';
 import FavPage from '../../pages/FavPage/FavPage';
-import TrendsPage from '../../pages/TrendsPage/TrendsPage';
+import FilterPage from '../../pages/FilterPage/FilterPage';
 import SignInPage from '../../pages/SignInPage/SignInPage';
 import SignUpPage from '../../pages/SignUpPage/SignUpPage';
 import Filter from '../Filter/Filter';
@@ -28,7 +28,7 @@ const App = () => {
                 <Route path='/' element={<HomePage />} />
                 <Route path='/movie/:id' element={<MoviePage />} />
                 <Route path='/search/:query' element={<SearchPage />} />
-                <Route path='/trends' element={<TrendsPage />} />
+                <Route path='/filter' element={<FilterPage />} />
                 <Route path='/favorites' element={<FavPage />} />
                 <Route path='/sign-in' element={<SignInPage />} />
                 <Route path='/sign-up' element={<SignUpPage />} />

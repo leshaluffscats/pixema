@@ -78,6 +78,7 @@ export interface IMovieData {
 
 export interface IMovieInitialState {
     movies: IMovieData[];
+    filteredMovies?: IMovieData[];
 }
 
 export interface IMovieItemProps {

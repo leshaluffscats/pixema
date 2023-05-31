@@ -5,24 +5,28 @@ import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import FiltersInput from './FiltersInput/FiltersInput';
 import FormButton from '../FormButton/FormButton';
 import { toggleFilterAction } from '../../store/reducers/filterReducer/filterActions';
-import FormLabel from '../FormLabel/FormLabel';
 import { FormEvent, useState } from 'react';
-import { getFilteredMovies } from '../../services/movieApiService';
+import { setQuery } from '../../services/movieApiService';
+import FormLabel from '../FormLabel/FormLabel';
+import { useNavigate } from 'react-router-dom';
+import { filterMoviesAsyncAction } from '../../store/reducers/movieReducer/moviesActions';
 
 const Filter = () => {
     const { isOpen } = useAppSelector(state => state.filter);
     const dispatch = useAppDispatch();
-    const [movieName, setMovieName] = useState("");
     const [genre, setGenre] = useState("");
-    const [year, setYear] = useState("");
-    const [lastYear, setLastYear] = useState("");
+    const [year, setYear] = useState("2000");
+    const [lastYear, setLastYear] = useState("2023");
     const [rating, setRating] = useState("");
     const [lastRating, setLastRating] = useState("");
-
+    const [limit, setLimit] = useState("10");
+    const navigate = useNavigate();
 
     function handleQuery(e: FormEvent) {
         e.preventDefault();
-        getFilteredMovies(genre, year, lastYear, rating, lastRating).then(console.log)
+        dispatch(filterMoviesAsyncAction(setQuery(year, lastYear, genre, rating, lastRating, limit)));
+        dispatch(toggleFilterAction());
+        navigate('/filter');
     }
 
     if (isOpen) return (
@@ -40,15 +44,15 @@ const Filter = () => {
                     <button>Year</button>
                 </div>
             </div>
-            <FormLabel type='text' text='Full or short movie name' value={movieName} setState={setMovieName} />
             <div className='filter-genre-block'>
                 Genre
-                <select name="genre-select">
-                    {allGenres.map(genre => <option key={genre.label}>{genre.label}</option>)}
+                <select name="genre-select" onChange={e => setGenre(e.target.value)}>
+                    {allGenres.map(genre => <option key={genre.label} value={genre.value}>{genre.label}</option>)}
                 </select>
             </div>
-            <FiltersInput text="Years" className='filter-input' setState={setYear} setState2={setLastYear}/>
-            <FiltersInput text="Rating" className='filter-input' setState={setRating} setState2={setLastRating}/>
+            <FiltersInput text="Years" className='filter-input' setState={setYear} setState2={setLastYear} value={year} value2={lastYear} />
+            <FiltersInput text="Rating" className='filter-input' setState={setRating} setState2={setLastRating} value={rating} value2={lastRating} />
+            <FormLabel text='limit' type='text' value={limit} setState={setLimit} />
             <div className='filter-btn-block'>
                 <button type='reset'>Очистить фильтр</button>
                 <FormButton text='Показать результаты' className='sign-form-button' />

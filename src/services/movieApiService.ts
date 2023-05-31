@@ -25,11 +25,17 @@ export const searchMoviesResponse = (searchValue: string) => {
     })
 }
 
-//api.kinopoisk.dev/v1.3/movie?sortField=year%3D2000-2010&sortField=rating.kp%3D8-10&sortField=votes.kp%3D1-10&sortField=genres.name%3D%D0%B4%D1%80%D0%B0%D0%BC%D0%B0&sortType=-1&page=1&limit=10
-export const getFilteredMovies = (genre: string, year: string, lastYear: string, ratingKP: string, lastRatingKP: string): Promise<any> => {
-    return axios.get(`${API_URL}v.1.3/movie?sortField=year%3D${year}-${lastYear}&sortField=rating.kp%3D${ratingKP}-${lastRatingKP}&sortField=genres.name%3D${genre}&sortType=-1&page=1&limit=10`, {
+
+export function setQuery(year: string, lastYear: string, genre: string, rating: string, lastRating: string, limit: string) {
+    return `sortField=sortType=-1&year=${year}-${lastYear}${genre !== 'Сбросить фильтр' ? `${`&genres.name=${genre.toLowerCase()}`}` : ''}&rating.kp=${rating}-${lastRating}&limit=${limit}`
+}
+
+export const getFilteredMovies = (query: string): Promise<any> => {
+    return axios.get(`${API_URL}v1.3/movie?${query}`, {
         headers: THIRD_API_HEADER,
     },
     )
 }
+
+
 
