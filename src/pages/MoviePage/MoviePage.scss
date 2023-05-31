@@ -6,9 +6,10 @@
     align-items: flex-start;
     justify-content: flex-start;
 
-    .image-wrapper {
+    .moviePage__left-side {
         flex-shrink: 0;
     }
+
 
     .moviePage__right-side {
         margin-left: 42px;
@@ -42,5 +43,24 @@
 
     .activeBtn {
         background-color: $primary-color;
+    }
+}
+
+@media screen and (max-width: 590px) {
+    .moviePage-wrapper {
+        flex-direction: column;
+        align-items: center;
+
+        h1 {
+            margin-bottom: 16px;
+        }
+
+        p {
+            margin: 20px 0;
+        }
+
+        .moviePage__left-side {
+            margin-bottom: 20px;
+        }
     }
 }

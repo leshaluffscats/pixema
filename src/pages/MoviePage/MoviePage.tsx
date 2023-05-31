@@ -58,7 +58,7 @@ const MoviePage = () => {
         <>
             <section className='moviePage-wrapper'>
                 <Aside />
-                <div>
+                <div className='moviePage__left-side'>
                     <MoviePoster url={movieData.image} />
                     <div>
                         <button

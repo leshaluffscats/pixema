@@ -1,11 +1,30 @@
 @import '../../shared/variables.scss';
 @import '../../shared/mixins.scss';
 
-.aside-wrapper{
+.aside-wrapper {
     @include flex;
     flex-direction: column;
     width: 230px;
     align-items: flex-start;
-    // margin-right: 6%;
     flex-shrink: 0;
+}
+
+@media screen and (max-width: 900px) {
+    .aside-wrapper {
+        @include flex;
+        flex-direction: row;
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        background-color: inherit;
+        align-items: center;
+        background-color: $context-color-white;
+        justify-content: space-between;
+        padding: 8px 0;
+        border-radius: 10px 10px 0 0;
+        border: 1px solid $context-color-light;
+    }
+
 }

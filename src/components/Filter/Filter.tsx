@@ -22,6 +22,15 @@ const Filter = () => {
     const [limit, setLimit] = useState("10");
     const navigate = useNavigate();
 
+    const resetValues = () => {
+        setGenre("");
+        setYear("");
+        setLastYear("");
+        setRating("");
+        setLastRating("");
+        setLimit("");
+    }
+
     function handleQuery(e: FormEvent) {
         e.preventDefault();
         dispatch(filterMoviesAsyncAction(setQuery(year, lastYear, genre, rating, lastRating, limit)));
@@ -54,7 +63,7 @@ const Filter = () => {
             <FiltersInput text="Rating" className='filter-input' setState={setRating} setState2={setLastRating} value={rating} value2={lastRating} />
             <FormLabel text='limit' type='text' value={limit} setState={setLimit} />
             <div className='filter-btn-block'>
-                <button type='reset'>Очистить фильтр</button>
+                <button type='reset' onClick={() => resetValues()}>Очистить фильтр</button>
                 <FormButton text='Показать результаты' className='sign-form-button' />
             </div>
         </form>

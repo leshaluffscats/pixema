@@ -1,7 +1,8 @@
-import React from 'react';
+import { useEffect } from 'react';
 import Aside from '../../components/Aside/Aside';
 import MovieList from '../../components/MoviesList/MoviesList';
 import './HomePage.scss';
+import { useAppDispatch } from '../../store/hooks';
 
 const HomePage = () => {
     return (

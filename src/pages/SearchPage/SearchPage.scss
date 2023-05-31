@@ -11,3 +11,13 @@
         gap: 30px;
     }
 }
+
+
+@media screen and (max-width: 900px) {
+    .searchPage-wrapper {
+        .searchMovies {
+            justify-content: flex-start;
+            gap: 5px;
+        }
+    }
+}

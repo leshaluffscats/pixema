@@ -7,8 +7,6 @@ import ShowMoreBtn from '../ShowMoreBtn/ShowMoreBtn';
 import { setLoadingStatusOnAction, setLoadingStatusOffAction } from '../../store/reducers/loadingReducer/loadingActions';
 import { stopRenderAction } from '../../store/reducers/renderReducer/renderActions';
 
-
-// todo исправить баг и использовать по возможности useRef
 const MoviesList = () => {
     const dispatch = useAppDispatch();
     const movies = useAppSelector(state => state.movies.movies);

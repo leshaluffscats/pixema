@@ -3,7 +3,7 @@
 
 .aside-button {
     @include flex;
-    width: 114px;
+    width: 120px;
     color: $secondary-color;
     background: none;
     cursor: pointer;
@@ -11,7 +11,46 @@
     font-size: 18px;
     text-decoration: none;
 
-    img{
-        margin-right: 23px;
+    img {
+        margin-right: 20px;
+    }
+
+}
+
+.aside-button-active {
+    @include flex;
+    width: 114px;
+    color: $primary-color;
+    background: none;
+    cursor: pointer;
+    margin-bottom: 40px;
+    font-size: 18px;
+    text-decoration: none;
+
+    img {
+        margin-right: 20px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .aside-button {
+        flex-direction: column;
+        margin-bottom: 0;
+        
+
+        img {
+            margin-right: 0;
+        }
+
+    }
+
+    .aside-button-active {
+        flex-direction: column;
+        margin-bottom: 0px;
+    
+        img {
+            margin-right: 0;
+        }
+
     }
 }

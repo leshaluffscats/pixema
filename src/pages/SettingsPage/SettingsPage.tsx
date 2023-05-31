@@ -1,14 +1,15 @@
-import React from 'react';
+import { useEffect } from 'react';
 import TitleSecond from '../../components/TitleSecond/TitleSecond';
 import Aside from '../../components/Aside/Aside';
 import './SettingsPage.scss';
-import { useAppSelector } from '../../store/hooks';
+import { useAppSelector, useAppDispatch } from '../../store/hooks';
 import ToggleBtn from '../../components/ToggleBtn/ToggleBtn';
 import useAuth from '../../hooks/hooks';
 
 const SettingsPage = () => {
     const { isDark } = useAppSelector(state => state.theme);
-    const { email, isAuth } = useAuth()
+    const { email, isAuth } = useAuth();
+
     return (
         <main className='settings-page-wrapper'>
             <Aside />

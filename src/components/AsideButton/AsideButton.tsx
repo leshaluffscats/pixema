@@ -7,7 +7,9 @@ import { NavLink } from 'react-router-dom';
 const AsideButton = (props: IAsideButtonProps) => {
 
     return (
-        <NavLink className='aside-button' to={props.url}>
+        <NavLink to={props.url} className={({ isActive }) =>
+        isActive ? "aside-button-active" : "aside-button"
+      }>
             <img src={props.icon} alt={props.text} />
             {props.text}
         </NavLink>

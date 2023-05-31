@@ -18,3 +18,12 @@
     margin-left: 40%;
     color: $context-color-error;
 }
+
+@media screen and (max-width: 601px){
+    .similar-movies-wrapper {
+        .similar-movies-subcontainer {
+            gap: 5px;
+            justify-content: center;
+        }
+    }
+}
