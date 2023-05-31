@@ -11,6 +11,7 @@ import FilterPage from '../../pages/FilterPage/FilterPage';
 import SignInPage from '../../pages/SignInPage/SignInPage';
 import SignUpPage from '../../pages/SignUpPage/SignUpPage';
 import Filter from '../Filter/Filter';
+import SettingsPage from '../../pages/SettingsPage/SettingsPage';
 
 const App = () => {
     const { isDark } = useAppSelector(state => state.theme);
@@ -29,6 +30,7 @@ const App = () => {
                 <Route path='/movie/:id' element={<MoviePage />} />
                 <Route path='/search/:query' element={<SearchPage />} />
                 <Route path='/filter' element={<FilterPage />} />
+                <Route path='/settings' element={<SettingsPage />} />
                 <Route path='/favorites' element={<FavPage />} />
                 <Route path='/sign-in' element={<SignInPage />} />
                 <Route path='/sign-up' element={<SignUpPage />} />

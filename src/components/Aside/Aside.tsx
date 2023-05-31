@@ -12,7 +12,7 @@ const Aside = () => {
             <AsideButton icon={homeIcon} url='/' text="Home"/>
             <AsideButton icon={trendsIcon} url='/filter' text="Filtered"/>
             <AsideButton icon={favoritesIcon} url='/favorites' text="Favorites"/>
-            <AsideButton icon={settingsIcon} url='*' text="Settings"/>
+            <AsideButton icon={settingsIcon} url='/settings' text="Settings"/>
         </div> 
     );
 
