@@ -10,7 +10,7 @@ const Logo = () => {
 
     function reloadPage() {
         navigate('/')
-        location.reload();
+        // location.reload();
     }
 
     return (
