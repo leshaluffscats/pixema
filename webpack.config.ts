@@ -1,9 +1,9 @@
-const webpack = require('webpack');
+// const webpack = require('webpack');
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const CopyPlugin = require('copy-webpack-plugin');
-require('dotenv').config({ path: './src/.env.local' }); 
+// require('dotenv').config({ path: './src/.env.local' }); 
 
 module.exports = {
     mode: "development",
@@ -30,9 +30,9 @@ module.exports = {
                 },
             ]
         }),
-        new webpack.DefinePlugin({
-            "process.env": JSON.stringify(process.env),
-          }),
+        // new webpack.DefinePlugin({
+        //     "process.env": JSON.stringify(process.env),
+        //   }),
     ],
     module: {
         rules: [
