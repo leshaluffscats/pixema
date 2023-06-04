@@ -17,7 +17,7 @@ It contains information about thousands of movies and TV-shows.</p>
  <hr></hr>
 
  <h2>Link to the website:</h2> 
- <a>https://leshaluffscats.github.io/pixema/public/</a>
+ <a>https://pixema-juk4cfcve-leshaluffscats.vercel.app/</a>
  <hr></hr>
 
 
