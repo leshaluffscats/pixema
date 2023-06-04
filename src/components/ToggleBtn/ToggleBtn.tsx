@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {ChangeEvent} from 'react';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { switchToDarkThemeAction, switchToLightThemeAction } from '../../store/reducers/themeReducer/themeActions';
 import './ToggleBtn.scss';
@@ -8,7 +8,7 @@ const ToggleBtn = () => {
     const dispatch = useAppDispatch();
     const {isDark} = useAppSelector(state=> state.theme);
 
-    function changeTheme(e: React.ChangeEvent<HTMLInputElement>) {
+    function changeTheme(e: ChangeEvent<HTMLInputElement>) {
         e.target.checked ? dispatch(switchToDarkThemeAction()) : dispatch(switchToLightThemeAction())
     }
 
