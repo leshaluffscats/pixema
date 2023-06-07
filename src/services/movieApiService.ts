@@ -8,6 +8,13 @@ export const getMoviesResponse = (page: number, limit: number) => {
         headers: THIRD_API_HEADER,
     })
 }
+export const getTrendsMoviesResponse = (page: number, limit: number) => {
+    return axios.get(`${API_URL}v1.3/movie?page=${page}&limit=${limit}&year=${new Date().getFullYear()}`, {
+        // headers: API_HEADER,
+        // headers: SECOND_API_HEADER
+        headers: THIRD_API_HEADER,
+    })
+}
 
 export const getMoviesResponseByID = (id: string) => {
     return axios.get(`${API_URL}v1.3/movie/${id}`, {

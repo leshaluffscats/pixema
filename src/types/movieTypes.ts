@@ -79,6 +79,7 @@ export interface IMovieData {
 export interface IMovieInitialState {
     movies: IMovieData[];
     filteredMovies?: IMovieData[];
+    trendsMovies?: IMovieData[];
 }
 
 export interface IMovieItemProps {

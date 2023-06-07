@@ -4,7 +4,7 @@ import './MoviesList.scss';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { loadMoviesAsyncAction } from '../../store/reducers/movieReducer/moviesActions';
 import ShowMoreBtn from '../ShowMoreBtn/ShowMoreBtn';
-import { setLoadingStatusOnAction, setLoadingStatusOffAction } from '../../store/reducers/loadingReducer/loadingActions';
+import { setLoadingStatusOnAction } from '../../store/reducers/loadingReducer/loadingActions';
 import { stopRenderAction } from '../../store/reducers/renderReducer/renderActions';
 
 const MoviesList = () => {

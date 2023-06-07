@@ -1,0 +1,18 @@
+@import '../../shared/variables.scss';
+@import '../../shared/mixins.scss';
+
+.trendsPage-wrapper {
+    @include flex;
+    flex-direction: column;
+    .trendsPage-subcontainer {
+        @include flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+
+        .trendsPage-movies {
+            @include flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+    }
+}

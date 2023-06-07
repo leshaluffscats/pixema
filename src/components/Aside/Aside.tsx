@@ -10,7 +10,7 @@ const Aside = () => {
     return (
         <div className='aside-wrapper'>
             <AsideButton icon={homeIcon} url='/' text="Home"/>
-            <AsideButton icon={trendsIcon} url='/filter' text="Filtered"/>
+            <AsideButton icon={trendsIcon} url='/trends' text="Trends"/>
             <AsideButton icon={favoritesIcon} url='/favorites' text="Favorites"/>
             <AsideButton icon={settingsIcon} url='/settings' text="Settings"/>
         </div> 

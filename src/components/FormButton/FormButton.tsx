@@ -1,4 +1,3 @@
-import React from 'react';
 import './FormButton.scss';
 
 interface IFormButtonProps {

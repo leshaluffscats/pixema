@@ -1,116 +1,133 @@
 @import '../../shared/variables.scss';
 @import '../../shared/mixins.scss';
 
-.filter-form {
-    @include flex;
-    flex-direction: column;
-    position: fixed;
+
+.filter-wrapper {
+    width: 100%;
+    height: 120vh;
+    position: absolute;
     top: 0;
     bottom: 0;
+    left: 0;
     right: 0;
-    background-color: $bg-color-dark;
-    color: $context-color-white;
-    justify-content: space-between;
-    padding: 48px 40px;
+    background-color: rgba(0, 0, 0, .5);
+    overflow: hidden;
+    z-index: 100;
+    
 
-    div {
-        width: 100%;
-    }
-
-    .filter-header {
-        margin-bottom: 38px;
+    .filter-form {
         @include flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        background-color: $bg-color-dark;
+        color: $context-color-white;
         justify-content: space-between;
-
-        span {
-            cursor: pointer;
-        }
-    }
-
-    .filter-sort-block {
-        padding-bottom: 24px;
-        border-bottom: 1px solid $graphite;
-        margin-bottom: 8px;
-
-        p {
-            margin-bottom: 10px
-        }
+        padding: 48px 40px;
+        overflow: hidden;
 
         div {
-            border: 1px solid $graphite;
-            border-radius: 10px;
-        }
-
-        button {
-            font-weight: 500;
-            font-size: 16px;
-            width: 50%;
-            height: 56px;
-            background: transparent;
-            color: $context-color-white;
-            cursor: pointer;
-        }
-
-        button:first-of-type {
-            border-right: 1px solid $graphite;
-        }
-    }
-
-    .filter-genre-block {
-        margin-bottom: 12px;
-
-        select {
-            display: block;
-            height: 50px;
             width: 100%;
-            color: $context-color-white;
-            background-color: transparent;
-            border: 1px solid $graphite;
-            border-radius: 10px;
-            margin-top: 8px;
-            font-size: 18px;
-
-            option {
-                display: block;
-                background-color: $bg-color-dark;
-                color: $context-color-white;
-                border-radius: 10px;
-                cursor: pointer
-            }
         }
-    }
 
-    .filter-input {
-        margin-bottom: 14px;
-
-        div {
+        .filter-header {
+            margin-bottom: 38px;
             @include flex;
             justify-content: space-between;
+
+            span {
+                cursor: pointer;
+            }
+        }
+
+        .filter-sort-block {
+            padding-bottom: 24px;
+            border-bottom: 1px solid $graphite;
+            margin-bottom: 8px;
+
+            p {
+                margin-bottom: 10px
+            }
+
+            div {
+                border: 1px solid $graphite;
+                border-radius: 10px;
+            }
+
+            button {
+                font-weight: 500;
+                font-size: 16px;
+                width: 50%;
+                height: 56px;
+                background: transparent;
+                color: $context-color-white;
+                cursor: pointer;
+            }
+
+            button:first-of-type {
+                border-right: 1px solid $graphite;
+            }
+        }
+
+        .filter-genre-block {
+            margin-bottom: 12px;
+
+            select {
+                display: block;
+                height: 50px;
+                width: 100%;
+                color: $context-color-white;
+                background-color: transparent;
+                border: 1px solid $graphite;
+                border-radius: 10px;
+                margin-top: 8px;
+                font-size: 18px;
+
+                option {
+                    display: block;
+                    background-color: $bg-color-dark;
+                    color: $context-color-white;
+                    border-radius: 10px;
+                    cursor: pointer
+                }
+            }
+        }
+
+        .filter-input {
+            margin-bottom: 14px;
+
+            div {
+                @include flex;
+                justify-content: space-between;
+                gap: 10px;
+            }
+
+            input {
+                width: 50%;
+                height: 50px;
+                @include bodytext;
+                background-color: $graphite;
+                border-radius: 10px;
+                margin-top: 8px;
+                padding: 0 20px;
+                color: $context-color-white;
+            }
+        }
+
+        .filter-btn-block {
+            @include flex;
             gap: 10px;
-        }
 
-        input {
-            width: 50%;
-            height: 50px;
-            @include bodytext;
-            background-color: $graphite;
-            border-radius: 10px;
-            margin-top: 8px;
-            padding: 0 20px;
-            color: $context-color-white;
-        }
-    }
-
-    .filter-btn-block {
-        @include flex;
-        gap: 10px;
-
-        button:first-of-type {
-            width: 100%;
-            height: 56px;
-            border-radius: 10px;
-            margin: 40px 0 32px;
-            cursor: pointer;
+            button:first-of-type {
+                width: 100%;
+                height: 56px;
+                border-radius: 10px;
+                margin: 40px 0 32px;
+                cursor: pointer;
+                @include bodytext;
+            }
         }
     }
 }
