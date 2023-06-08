@@ -1,4 +1,4 @@
-import React,{ReactNode} from 'react';
+import { ReactNode } from 'react';
 import { IMovieDataProps, IMoviePerson } from '../../types/movieTypes';
 import './MovieTableData.scss';
 
@@ -13,7 +13,7 @@ const MovieTableData = ({ year, countries, persons }: IMovieDataProps) => {
             .slice(0, 20)
             .map((el: IMoviePerson) => <span key={el.id}>{el.name}</span>)
     }
-
+    
     return (
         <table className='movieTableData-wrapper'>
             <tbody>

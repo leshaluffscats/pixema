@@ -1,9 +1,9 @@
-// const webpack = require('webpack');
+const webpack = require('webpack');
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const CopyPlugin = require('copy-webpack-plugin');
-// require('dotenv').config({ path: './src/.env.local' }); 
+require('dotenv').config({ path: './src/.env.local' });
 
 module.exports = {
     mode: "development",
@@ -11,7 +11,7 @@ module.exports = {
     output: {
         filename: "bundle.js",
         path: path.resolve(__dirname, "public"),
-        // publicPath: '/',
+        // publicPath: './',
         clean: true,
     },
     resolve: {
@@ -30,12 +30,13 @@ module.exports = {
                 },
             ]
         }),
-        // new webpack.DefinePlugin({
-        //     "process.env": JSON.stringify(process.env),
-        //   }),
+        new webpack.DefinePlugin({
+            "process.env": JSON.stringify(process.env),
+        }),
     ],
     module: {
         rules: [
+            { test: /\.(html)$/, use: ['html-loader'] },
             {
                 test: /\.(js|jsx)$/,
                 exclude: /node_modules/,
@@ -79,5 +80,7 @@ module.exports = {
         historyApiFallback: true,
         compress: true,
         port: 3000,
+        hot: true,
     },
 }
+

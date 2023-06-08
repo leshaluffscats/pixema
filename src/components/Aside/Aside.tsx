@@ -1,4 +1,3 @@
-import React from 'react';
 import './Aside.scss';
 import homeIcon from '../../assets/svg/home-icon.svg';
 import trendsIcon from '../../assets/svg/trends-icon.svg';

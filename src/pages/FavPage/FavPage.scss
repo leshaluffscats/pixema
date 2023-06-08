@@ -5,6 +5,11 @@
     .favPage-subcontainer {
         @include flex;
         align-items: flex-start;
-        gap: 30px;
+        .favPage-list{
+            gap: 30px;
+            @include flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
     }
 }

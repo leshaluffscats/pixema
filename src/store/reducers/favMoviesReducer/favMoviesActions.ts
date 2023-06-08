@@ -8,7 +8,7 @@ export const addToFavoritesAction = (movie: any): IFavMovieAction => (
     }
 )
 
-export const removeFromFavoritesAction = (id: number): IFavMovieAction => (
+export const removeFromFavoritesAction = (id: string): IFavMovieAction => (
     {
         type: REMOVE_FROM_FAVORITES,
         payload: id,

@@ -15,20 +15,20 @@ const FavPage = () => {
 
     useEffect(() => {
         dispatch(closeFilterAction());
-     }, [])
+    }, [])
 
     return (
         <main className='favPage-wrapper'>
             <section className='favPage-subcontainer'>
                 <Aside />
-
-                {!isAuth && <EmptyFavPage background={background} text='You have to authorize' />}
-                {isAuth && !favMovies?.length && <EmptyFavPage background={background} text='No favorite movies' />}
-                {
-                    isAuth && favMovies?.length &&
-                    favMovies.map((el: any) => <MovieItem image={el.previewImage} name={el.title} genres={el.genres} id={el.id} key={el.id} />)
-                }
-
+                <div className='favPage-list'>
+                    {!isAuth && <EmptyFavPage background={background} text='You have to authorize' />}
+                    {isAuth && !favMovies?.length && <EmptyFavPage background={background} text='No favorite movies' />}
+                    {
+                        isAuth && favMovies?.length &&
+                        favMovies.map((el: any) => <MovieItem image={el.previewImage} name={el.title} genres={el.genres} id={el.id} key={el.id} />)
+                    }
+                </div>
             </section>
         </main>
     );

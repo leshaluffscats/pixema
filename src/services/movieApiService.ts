@@ -18,9 +18,9 @@ export const getTrendsMoviesResponse = (page: number, limit: number) => {
 
 export const getMoviesResponseByID = (id: string) => {
     return axios.get(`${API_URL}v1.3/movie/${id}`, {
-        // headers: API_HEADER,
+        headers: API_HEADER,
         // headers: SECOND_API_HEADER,
-        headers: THIRD_API_HEADER,
+        // headers: THIRD_API_HEADER,
     })
 }
 

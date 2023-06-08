@@ -4,6 +4,7 @@
 .trendsPage-wrapper {
     @include flex;
     flex-direction: column;
+
     .trendsPage-subcontainer {
         @include flex;
         align-items: flex-start;
@@ -13,6 +14,8 @@
             @include flex;
             gap: 30px;
             flex-wrap: wrap;
+            justify-content: space-evenly;
+
         }
     }
 }

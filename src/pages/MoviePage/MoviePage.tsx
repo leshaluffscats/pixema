@@ -7,14 +7,14 @@ import MovieTableData from '../../components/MovieTableData/MovieTableData';
 import { IMovieData } from '../../types/movieTypes';
 import Aside from '../../components/Aside/Aside';
 import { getMoviesResponseByID } from '../../services/movieApiService';
-import { addToFavoritesAction } from '../../store/reducers/favMoviesReducer/favMoviesActions';
-import { useAppDispatch } from '../../store/hooks';
+import { addToFavoritesAction, removeFromFavoritesAction } from '../../store/reducers/favMoviesReducer/favMoviesActions';
+import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import SimilarMovies from '../../components/SimilarMovies/SimilarMovies';
 
 const MoviePage = () => {
     const { id } = useParams();
     const dispatch = useAppDispatch();
-    const [isBtnClicked, setIsBtnClicked] = useState(false);
+    const { favMovies } = useAppSelector(state => state.favMovies);
 
     const [movieData, setMovieData] = useState({
         image: "",
@@ -51,6 +51,17 @@ const MoviePage = () => {
             rating: { kp: data.rating.kp, imdb: data.rating.imdb },
         })
     }
+    const isPostFavorite = (id: string) => {
+        return favMovies.find((movie: any) => movie.id === id)
+    }
+
+    function handleBookmark() {
+        if (isPostFavorite(id)) {
+            dispatch(removeFromFavoritesAction(id))
+        } else {
+            dispatch(addToFavoritesAction(movieData))
+        }
+    }
 
     useEffect(() => {
         getMoviesResponseByID(id).then(({ data }) => setValues(data));
@@ -64,12 +75,9 @@ const MoviePage = () => {
                     <MoviePoster url={movieData.image} />
                     <div>
                         <button
-                            className='movie-page-button'
-                            onClick={() => {
-                                dispatch(addToFavoritesAction(movieData));
-                                setIsBtnClicked(prev => !prev);
-                            }}>
-                            add to favorites
+                            className={isPostFavorite(id) ? "movie-page-button_active" : "movie-page-button"}
+                            onClick={handleBookmark}>
+                            {isPostFavorite(id) ? "remove from favorites" : "add to favorites"}
                         </button>
                     </div>
                 </div>
